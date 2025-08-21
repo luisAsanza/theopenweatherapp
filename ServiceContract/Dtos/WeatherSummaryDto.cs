@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace ServiceContract.Dtos
+{
+    public class WeatherSummaryDto
+    {
+        public string Latitude { get; set; }
+        public string Longitude { get; set; }
+
+        public DateTimeOffset TimeZone { get; set; }
+        public DateOnly Date { get; set; }
+        public string Units { get; set; }
+        //Humidity at 12:00
+        public HumidityDto Humidity { get; set; }
+        public TemperatureDto Temperature { get; set; }
+    }
+}
