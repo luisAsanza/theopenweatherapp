@@ -12,7 +12,6 @@ namespace ServiceContract.Dtos
         public DateTimeOffset TimeZone { get; set; }
         public DateOnly Date { get; set; }
         public string Units { get; set; }
-        //Humidity at 12:00
         public HumidityDto Humidity { get; set; }
         public TemperatureDto Temperature { get; set; }
     }
