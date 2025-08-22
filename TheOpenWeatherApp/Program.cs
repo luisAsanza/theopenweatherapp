@@ -1,10 +1,25 @@
+using Microsoft.Extensions.Options;
+using ServiceContract;
+using Services;
+using Services.Providers.OpenWeather;
+using System.Net;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //Register dependencies for MVC app
 builder.Services.AddControllersWithViews();
 
 //Inject dependencies using ASP.NET Core built-in IoC container
+builder.Services.AddScoped<ICitiesService, CitiesService>();
 
+builder.Services.AddHttpClient<IWeatherService, WeatherService>(
+    (sp, http) =>
+    {
+        var options = sp.GetRequiredService<IOptions<WeatherApiOptions>>().Value;
+        http.BaseAddress = new Uri(options.BaseUrl);
+        http.Timeout = TimeSpan.FromSeconds(options.TimeoutSeconds);
+    }
+    );
 
 var app = builder.Build();
 
