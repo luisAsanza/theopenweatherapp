@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Text;
 
 namespace ServiceContract.Dtos
 {
     public class WeatherSummaryDto
     {
-        public string Latitude { get; set; }
-        public string Longitude { get; set; }
+        public double Latitude { get; set; }
+        public double Longitude { get; set; }
 
         public DateTimeOffset TimeZone { get; set; }
         public DateOnly Date { get; set; }

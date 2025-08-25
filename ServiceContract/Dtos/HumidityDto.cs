@@ -6,6 +6,6 @@ namespace ServiceContract.Dtos
 {
     public class HumidityDto
     {
-        public int Afternoon { get; set; }
+        public double Afternoon { get; set; }
     }
 }

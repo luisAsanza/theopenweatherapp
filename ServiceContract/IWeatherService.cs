@@ -4,6 +4,6 @@ namespace ServiceContract
 {
     public interface IWeatherService
     {
-        Task<WeatherSummaryDto> GetWeatherSummary(string lat, string lon, DateTime date);
+        Task<WeatherSummaryDto> GetWeatherSummaryAsync(double lat, double lon, DateOnly date, CancellationToken ct = default);
     }
 }
